@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Outfit", sans-serif;
+
+  --color-bg: #050505;
+  --color-surface: #121214;
+  --color-accent-cyan: #00f2ff;
+  --color-accent-magenta: #ff00ff;
+  --color-accent-green: #39ff14;
+  --color-text-p: #e0e0e0;
+  --color-text-s: #88888b;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-p antialiased overflow-hidden selection:bg-accent-cyan/30;
+  }
+}
+
+@layer utilities {
+  .neon-glow-cyan {
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+  }
+  .neon-glow-magenta {
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+  }
+  .neon-glow-green {
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+  }
+  .text-neon-cyan {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.6);
+  }
+  .text-neon-magenta {
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+  }
+  .text-neon-green {
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
+  }
+  .glass-panel {
+    @apply bg-surface border border-white/5;
+  }
+  .grid-bg-sleek {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 25px 25px;
+  }
+  .game-view-bg {
+    background: radial-gradient(circle at center, #111 0%, #050505 100%);
+  }
+}
